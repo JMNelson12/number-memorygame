@@ -89,13 +89,14 @@ function gameFunction() {
     wrongGuess: function () {
       wrongGuess.push('0');
       let wrongLength = wrongGuess.length;
+      let rightLength = rightGuess.length;
       var _this = this;
 
       if (wrongLength >= 3) {
         this.$wrong.text(wrongLength + " ");
-        setTimeout(function () {
-          _this.resetGame();
-        }, 1000)
+        document.getElementById('id01').style.display='block';
+        $('.leScore').text(rightLength + 1);
+        _this.resetGame();
       } else {
         this.$wrong.text(wrongLength + " ");
         setupGame();
