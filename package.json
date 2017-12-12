@@ -1,0 +1,20 @@
+{
+  "name": "number-memory",
+  "version": "1.0.0",
+  "description": "Game that tests memory",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Game",
+    "Memory",
+    "Numbers"
+  ],
+  "author": "Jacob Nelson",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0"
+  }
+}
