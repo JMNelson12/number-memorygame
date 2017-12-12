@@ -22,7 +22,11 @@ function gameFunction() {
     number.html(numArr[numArrLength - 1]);
 
     setTimeout(function () {
-      number.html('<i class="fa fa-circle"></i>&nbsp;<i class="fa fa-circle"></i>&nbsp;<i class="fa fa-circle"></i>');
+      var length = numArr[numArr.length - 1].toString().length;
+      number.html('');
+      for (var i = 0; i < length; i++) {
+        number.append('<i class="fa fa-circle"></i>&nbsp;');
+      }
     }, (135 * (x.toString().length * 1.1)));
   };
   setupGame();
@@ -85,9 +89,13 @@ function gameFunction() {
     wrongGuess: function () {
       wrongGuess.push('0');
       let wrongLength = wrongGuess.length;
+      var _this = this;
 
       if (wrongLength >= 3) {
-        this.resetGame();
+        this.$wrong.text(wrongLength + " ");
+        setTimeout(function () {
+          _this.resetGame();
+        }, 1000)
       } else {
         this.$wrong.text(wrongLength + " ");
         setupGame();
